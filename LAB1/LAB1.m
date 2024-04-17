@@ -40,7 +40,7 @@ desc = [];
 for K_1 = K_var
     W(1) = K_1 / s;
     [y_s,t_s] = step(W(1));
-    desc = [desc; sprintf('K = %0.1g', K_1)];
+    desc = [desc; sprintf('K = %0.1f', K_1)];
     plot(t_s, y_s, 'LineWidth', 2);
     hold on;
 end
@@ -67,7 +67,7 @@ desc = [];
 for K_1 = K_var
     W(1) = K_1 / s;
     [y_i,t_i] = impulse(W(1));
-    desc = [desc; sprintf('K = %0.1g', K_1)];
+    desc = [desc; sprintf('K = %0.1f', K_1)];
     plot(t_i, y_i, 'LineWidth', 2);
     hold on;
 end
@@ -105,7 +105,7 @@ desc = [];
 for K_1 = K_var
     W(3) = tf(K_1);
     [y_s,t_s] = step(W(3));
-    desc = [desc; sprintf('K = %0.1g', K_1)];
+    desc = [desc; sprintf('K = %0.1f', K_1)];
     plot(t_s, y_s, 'LineWidth', 2);
     hold on;
 end
@@ -132,7 +132,7 @@ desc = [];
 for K_1 = K_var;
     W(3) = tf(K_1);
     [y_i,t_i] = impulse(W(3));
-    desc = [desc; sprintf('K = %0.1g', K_1)];
+    desc = [desc; sprintf('K = %0.1f', K_1)];
     plot(t_i, y_i, 'LineWidth', 2);
     hold on;
 end
@@ -166,7 +166,7 @@ for K_1 = K_var
         for T_2 = T2_var
             W(4) = K_1 / (T_2 * s + 1);
             [y_s,t_s] = step(W(4));
-            desc = [desc; sprintf('K = %0.1g, T = %0.1g', K_1, T_2)];
+            desc = [desc; sprintf('K = %0.1f, T = %0.1f', K_1, T_2)];
             plot(t_s, y_s, 'LineWidth', 2);
             hold on;
         end
@@ -196,7 +196,7 @@ for K_1 = K_var
         for T_2 = T2_var
             W(4) = K_1 / (T_2 * s + 1);
             [y_i,t_i] = impulse(W(4));
-            desc = [desc; sprintf('K = %0.1g, T = %0.1g', K_1, T_2)];
+            desc = [desc; sprintf('K = %0.1f, T = %0.1f', K_1, T_2)];
             plot(t_i, y_i, 'LineWidth', 2);
             hold on;
         end
@@ -234,7 +234,7 @@ for K_1 = K_var
         for T_2 = T2_var
             W(5) = K_1/(T_1^2 * s^2 + T_2 * s + 1);
             [y_s,t_s] = step(W(5));
-            desc = [desc; sprintf('K = %0.1g, T_{1} = %0.1g, T_{2} = %0.1g', K_1, T_2, T_1)];
+            desc = [desc; sprintf('K = %0.1f, T_{1} = %0.1f, T_{2} = %0.1f', K_1, T_2, T_1)];
             plot(t_s, y_s, 'LineWidth', 2);
             hold on;
         end
@@ -266,7 +266,7 @@ for K_1 = K_var
         for T_2 = T2_var
             W(5) = K_1/(T_1^2 * s^2 + T_2 * s + 1);
             [y_i,t_i] = impulse(W(5));
-            desc = [desc; sprintf('K = %0.1g, T_{1} = %0.1g, T_{2} = %0.1g', K_1, T_2, T_1)];
+            desc = [desc; sprintf('K = %0.1f, T_{1} = %0.1f, T_{2} = %0.1f', K_1, T_2, T_1)];
             plot(t_i, y_i, 'LineWidth', 2);
             hold on;
         end
@@ -302,7 +302,7 @@ for K_1 = K_var
         for T_2 = T2_var
             W(6) = K_1 / (T_2^2 * s^2 + T_1 * s + 1);
             [y_s,t_s] = step(W(6));
-            desc = [desc; sprintf('K = %0.1g, T_{1} = %0.1g, T_{2} = %0.1g', K_1, T_1, T_2)];
+            desc = [desc; sprintf('K = %0.1f, T_{1} = %0.1f, T_{2} = %0.1f', K_1, T_1, T_2)];
             plot(t_s, y_s, 'LineWidth', 2);
             hold on;
         end
@@ -334,7 +334,7 @@ for K_1 = K_var
         for T_2 = T2_var
             W(6) = K_1 / (T_2^2 * s^2 + T_1 * s + 1);
             [y_i,t_i] = impulse(W(6));
-            desc = [desc; sprintf('K = %0.1g, T_{1} = %0.1g, T_{2} = %0.1g', K_1, T_1, T_2)];
+            desc = [desc; sprintf('K = %0.1f, T_{1} = %0.1f, T_{2} = %0.1f', K_1, T_1, T_2)];
             plot(t_i, y_i, 'LineWidth', 2);
             hold on;
         end
@@ -374,7 +374,7 @@ for K_1 = K_var
         for T_2 = T2_var
             W(7) = K_1 / (T_2 * (s^2) + 1);
             [y_s,t_s] = step(W(7), 100);
-            desc = [desc; sprintf('K = %0.1g, T = %0.1g', K_1, T_2)];
+            desc = [desc; sprintf('K = %0.1f, T = %0.1f', K_1, T_2)];
             plot(t_s, y_s, 'LineWidth', 2);
             hold on;
         end
@@ -404,7 +404,7 @@ for K_1 = K_var
         for T_2 = T2_var
             W(7) = K_1/(T_2 * (s^2) + 1);
             [y_i,t_i] = impulse(W(7), 100);
-            desc = [desc; sprintf('K = %0.1g, T = %0.1g', K_1, T_2)];
+            desc = [desc; sprintf('K = %0.1f, T = %0.1f', K_1, T_2)];
             plot(t_i, y_i, 'LineWidth', 2)
             hold on
         end
@@ -440,7 +440,7 @@ for K_1 = K_var
         for T_2 = T2_var
             W(8) = K_1 / (s * (T_2 * s + 1));
             [y_s,t_s] = step(W(8));
-            desc = [desc; sprintf('K = %0.1g, T = %0.1g', K_1, T_2)];
+            desc = [desc; sprintf('K = %0.1f, T = %0.1f', K_1, T_2)];
             plot(t_s, y_s, 'LineWidth', 2);
             hold on;
         end
@@ -467,10 +467,10 @@ grid minor;
 desc = [];
 figure
 for K_1 = K_var
-        for T_2 = T2_var
+        for T_2 = T1_var
             W(8) = K_1/(s * (T_2 * s + 1));
             [y_i,t_i] = impulse(W(8));
-            desc = [desc; sprintf('K = %0.1g, T = %0.1g', K_1, T_2)];
+            desc = [desc; sprintf('K = %0.1f, T = %0.1f', K_1, T_2)];
             plot(t_i, y_i, 'LineWidth', 2);
             hold on;
         end
@@ -506,7 +506,7 @@ for K_1 = K_var
     for T_2 = T2_var
             W(9) = (K_1 * s) / (T_2 * s + 1);
             [y_s,t_s] = step(W(9));
-            desc = [desc; sprintf('K = %0.1g, T = %0.1g', K_1, T_2)];
+            desc = [desc; sprintf('K = %0.1f, T = %0.1f', K_1, T_2)];
             plot(t_s, y_s, 'LineWidth', 2);
             hold on
         end
@@ -536,7 +536,7 @@ for K_1 = K_var
     for T_2 = T2_var
         W(9) = (K_1 * s) / (T_2 * s + 1);
         [y_i,t_i] = impulse(W(9));
-        desc = [desc; sprintf('K = %0.1g, T = %0.1g', K_1, T_2)];
+        desc = [desc; sprintf('K = %0.1f, T = %0.1f', K_1, T_2)];
         plot(t_i, y_i, 'LineWidth', 2);
         hold on;
     end
@@ -578,7 +578,7 @@ for K_1 = K_var
     for T_2 = T2_var
             W(11) = (K_1 * (T_2 * s + 1)) / s;
             [y_s,t_s] = step(W(11));
-            desc = [desc; sprintf('K = %0.1g, T = %0.1g', K_1, T_2)];
+            desc = [desc; sprintf('K = %0.1f, T = %0.1f', K_1, T_2)];
             plot(t_s, y_s, 'LineWidth', 2);
             hold on;
         end
@@ -608,7 +608,7 @@ for K_1 = K_var
     for T_2 = T2_var
         W(11) = (K_1 * (T_2 * s + 1)) / s;
         [y_i,t_i] = impulse(W(11));
-        desc = [desc; sprintf('K = %0.1g, T = %0.1g', K_1, T_2)];
+        desc = [desc; sprintf('K = %0.1f, T = %0.1f', K_1, T_2)];
         plot(t_i, y_i, 'LineWidth', 2);
         hold on;
     end
