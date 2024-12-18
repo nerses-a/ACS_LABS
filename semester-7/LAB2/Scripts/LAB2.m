@@ -1,0 +1,70 @@
+clc
+clear
+close all
+
+%{
+Аветисян Нерсес ИУ2-71
+
+    Лабораторная работа №2
+«Гармоническая линеаризация»
+
+%}
+
+T1 = 0.05;
+K1 = 25;
+dzeta = 0.5;
+omega = 5;
+
+a = 15.5;
+b = 2;
+c = 2;
+
+omega_so = 8.31; % 6.31  7.288
+
+% Лучше размер a_var не сделать больше 3 элементов
+a_var = [16 : 0.5: 17];
+b_var = [2];
+c_var = [2];
+
+for i = 1 : length(c_var)
+    c = c;
+    for j = 1 : length(b_var)
+        b = b;
+        for k = 1 : length(a_var)
+            
+            a = a_var(k);
+            s = sim('lab_harmonic_mdl.slx');
+        
+            figure
+            clf
+            subplot(2,1,1)
+            plot(s.non_lin_out.time, s.non_lin_out.signals.values,'LineWidth',2)
+            hold on
+            plot(s.non_lin_lin_out.time, s.non_lin_lin_out.signals.values,'LineWidth',2)
+            hold off
+            grid on
+            grid minor
+            xlabel('Time, s')
+            ylabel('Value')
+            title('Output of initial non-linear system')
+            legend('Output of non-linear part','Output of linear part')
+            set(legend, 'FontSize', 8);
+            set(gca,'FontName','Times','FontSize', 14)
+        
+            subplot(2,1,2)
+            plot(s.lin_out.time, s.lin_out.signals.values,'LineWidth',2)
+            hold on
+            plot(s.lin_lin_out.time, s.lin_lin_out.signals.values,'LineWidth',2)
+            hold off
+            grid on
+            grid minor
+            xlabel('Time, s')
+            ylabel('Value')
+            str_des = sprintf('Output of linearized system, a = %0.1f; b = %0.1f; c = %0.1f', a, b, c);
+            title(str_des)
+            legend('Output of "non-linear" part','Output of linear part')
+            set(legend, 'FontSize', 8);
+            set(gca,'FontName','Times','FontSize', 14)
+        end
+    end
+end
